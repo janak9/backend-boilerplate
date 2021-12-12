@@ -1,0 +1,6 @@
+module.exports = `
+type NormalResponse {
+  success: Boolean
+  error: Error
+}
+`;

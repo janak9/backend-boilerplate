@@ -1,0 +1,57 @@
+module.exports = `
+
+type UserResponse {
+  success: Boolean
+  user: User
+  error: Error
+}
+
+type verifyOTPResponse {
+  success: Boolean
+  verified_token: String
+  error: Error
+}
+
+type UserDetailResponse {
+  success: Boolean
+  user: User
+  error: Error
+}
+
+type LogoutResponse {
+  success: Boolean
+  message: String
+  error: Error
+}
+
+input input_send_OTP {
+  device_type: String
+}
+
+input input_verify_OTP {
+  code: String!
+  verify: Boolean
+}
+
+input input_update_user {
+  firstName: String
+  lastName: String
+  email: String
+  dateOfBirth: String
+  timeOfBirth: String
+  education: ID
+  gender: ID
+}
+
+extend type Query {
+  user: UserDetailResponse
+}
+
+extend type Mutation {
+  send_OTP(input: input_send_OTP): UserResponse
+  verify_OTP(input: input_verify_OTP!): verifyOTPResponse
+  update_user(input: input_update_user): UserResponse
+  logout: LogoutResponse
+}
+
+`;

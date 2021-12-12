@@ -1,0 +1,17 @@
+module.exports = `
+type User {
+  _id: ID
+  firstName: String
+  lastName: String
+  countryISDCode: String
+  mobileNumber: String
+  email: String
+  dateOfBirth: String
+  timeOfBirth: String
+  userType: String
+  status: String
+  createdAt: String
+  updatedAt: String
+  auth_token: String
+}
+`;

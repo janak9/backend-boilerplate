@@ -1,0 +1,29 @@
+module.exports = `
+
+extend type Query {
+  health: String
+}
+
+type Response {
+  success: Boolean
+  user: User
+  error: Error
+}
+
+input UserInput {
+  countryISDCode: String!
+  mobileNumber: String!
+  deviceToken: String!
+  deviceType: String
+  brandName: String
+  osName: String
+  osVersion: String
+  appVersion: String
+}
+
+extend type Mutation {
+  login(input: UserInput!): Response
+  register(input: UserInput!): Response
+}
+
+`;

@@ -1,0 +1,8 @@
+module.exports = `
+type Error {
+  error: Boolean
+  validation_error: Boolean
+  invalid_token: Boolean
+  message: String
+}
+`;
